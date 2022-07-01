@@ -17,13 +17,14 @@ import {
   View,
 } from 'react-native';
 import Routes from './src/routes/Routes';
-
+import {Provider} from 'react-redux';
+import {ContextProvider} from './src/ContextApi/ContextProvider';
 
 const App = () => {
-
-
   return (
-    <Routes/>
+      <ContextProvider>
+        <Routes />
+      </ContextProvider>
   );
 };
 
