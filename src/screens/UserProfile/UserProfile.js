@@ -134,7 +134,7 @@ const UserProfile = () => {
             name={'location-outline'}
           />
 
-          <Text style={{flex: 1, flexWrap: 'wrap'}}>
+          <Text style={{flex: 1, flexWrap: 'wrap',color : Theme.txt}}>
             No reviews · Talent agency Plot C, District 19, 3 Shah xxxxxxxxxd Rd
             03x-xxxxxxxxx
           </Text>

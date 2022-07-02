@@ -48,6 +48,9 @@ const TestScreen = ({navigation}) => {
     {
       name : 'UserProfile'
     },
+    {
+      name : 'RewardsScreen'
+    },
   ]
 
   const renderItem = ({ item }) => (

@@ -17,6 +17,7 @@ import PersonalProfile from '../screens/PersonalProfile/PersonalProfile';
 import ProfileTimeline from '../screens/ProfileTimeline/ProfileTimeline';
 import Timeline from '../screens/Timeline/Timeline';
 import UserProfile from '../screens/UserProfile/UserProfile';
+import RewardsScreen from '../screens/RewardsScreen/RewardsScreen';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,7 @@ export default  Routes =() => {
       <Stack.Screen name="ProfileTimeline" component={ProfileTimeline} />
       <Stack.Screen name="Timeline" component={Timeline} />
       <Stack.Screen name="UserProfile" component={UserProfile} />
+      <Stack.Screen name="RewardsScreen" component={RewardsScreen} />
     </Stack.Navigator>
     </NavigationContainer>
   );
