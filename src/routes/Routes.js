@@ -12,6 +12,11 @@ import ArtGallaryScreen from '../screens/ArtGallaryScreen/ArtGallaryScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import MessageScreen from '../screens/MessageScreen/MessageScreen';
 import ForumScreen from '../screens/ForumScreen/ForumScreen';
+import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
+import PersonalProfile from '../screens/PersonalProfile/PersonalProfile';
+import ProfileTimeline from '../screens/ProfileTimeline/ProfileTimeline';
+import Timeline from '../screens/Timeline/Timeline';
+import UserProfile from '../screens/UserProfile/UserProfile';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +40,11 @@ export default  Routes =() => {
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       <Stack.Screen name="MessageScreen" component={MessageScreen} />
       <Stack.Screen name="ForumScreen" component={ForumScreen} />
+      <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Stack.Screen name="PersonalProfile" component={PersonalProfile} />
+      <Stack.Screen name="ProfileTimeline" component={ProfileTimeline} />
+      <Stack.Screen name="Timeline" component={Timeline} />
+      <Stack.Screen name="UserProfile" component={UserProfile} />
     </Stack.Navigator>
     </NavigationContainer>
   );

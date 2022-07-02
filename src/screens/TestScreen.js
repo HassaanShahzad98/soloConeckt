@@ -33,6 +33,21 @@ const TestScreen = ({navigation}) => {
     {
       name : 'ForumScreen'
     },
+    {
+      name : 'SettingsScreen'
+    },
+    {
+      name : 'PersonalProfile'
+    },
+    {
+      name : 'ProfileTimeline'
+    },
+    {
+      name : 'Timeline'
+    },
+    {
+      name : 'UserProfile'
+    },
   ]
 
   const renderItem = ({ item }) => (
