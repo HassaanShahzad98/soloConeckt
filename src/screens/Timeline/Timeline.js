@@ -31,7 +31,7 @@ const Timeline = () => {
           paddingHorizontal: 10,
           paddingVertical: 20,
           borderBottomWidth: 1,
-          borderBottomColor: 'rgba(0,0,0,0.25)',
+          borderBottomColor: Theme.themeName==='Light'?'rgba(0,0,0,0.25)': 'rgba(240,240,240,0.25)',
           alignItems: 'center',
           alignContent: 'center',
         }}>
@@ -129,6 +129,7 @@ const Timeline = () => {
                 paddingLeft: 10,
                 borderRadius: 20,
                 marginVertical: 5,
+                color:Theme.themeName==='Light'?'rgba(0,0,0,0.25)': 'rgba(240,240,240,0.25)'
               }}>
               What's on your mind?
             </Text>

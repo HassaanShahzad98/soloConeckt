@@ -6,15 +6,14 @@ import {
     StyleSheet,
     TextInput,
     TouchableOpacity,
-    TouchableHighlight
+    TouchableHighlight,
+    Image
   } from 'react-native';
   import React,{useContext} from 'react';
   import { ContextStore } from '../ContextApi/ContextProvider';
   
   const LoginScreen = () => {
    let {Theme} = useContext(ContextStore)
-
-   console.log(Theme)
     
     return (
       // <ImageBackground
@@ -27,7 +26,7 @@ import {
         style={{
           flex: 1,
           paddingHorizontal: 20,
-          backgroundColor: '#E5E5E5',
+          backgroundColor: Theme.bg,
         }}>
         <View
           style={{
@@ -39,34 +38,75 @@ import {
           }}>
               
           <View style={{width: '100%'}}>
-              <Text style={styles.TopHeading}>
+              <Text style={[styles.TopHeading,{color:Theme.txt}]}>
                   Welcome to
               </Text>
-              <Text style={styles.TopHeading}>
-                 Solo Conneckt
+              <Text style={[styles.TopHeading,{color:Theme.txt}]}>
+                 SOLO CONNECKT
+              </Text>
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  paddingVertical: 18,
+                  color: Theme.txt,
+                  textAlign:'center',
+                  fontSize: 13,
+                }}>
+                A income generating Eco-System built with networking and profit sharing for ALL in mind
               </Text>
             <TextInput
+              placeholder='Username , Email & Phone Number'
               onFocus={() => console.log('focus received')}
               onBlur={() => console.log('focus lost')}
               style={styles.focusedInput}
             />
             <TextInput
+            placeholder='Password'
               onFocus={() => console.log('focus received')}
               onBlur={() => console.log('focus lost')}
               style={styles.focusedInput}
             />
-            <Text></Text>
+          <TouchableOpacity>
+          <Text
+            style={{
+              marginTop:-8,
+              color: Theme.txt,
+              alignSelf: 'flex-end',
+              marginBottom:30,
+              fontWeight:'bold'
+            }}>
+            Forgot Password?
+          </Text>
+          </TouchableOpacity>
+          <View style={{flexDirection:'row' , alignItems:'center' , justifyContent:'center',marginBottom:10}}>
+            <View style={{height:1, backgroundColor:Theme.txt , width:'25%' , opacity:0.2}}></View>
+              <Text style={{color:Theme.txt , marginHorizontal:8}}>OR Sign up with</Text>
+            <View style={{height:1, backgroundColor:Theme.txt , width:'25%' , opacity:0.2}}></View>
+          </View>
+
+          <View style={{flexDirection:'row' ,alignSelf:"center", alignItems:'center' , justifyContent:'space-evenly',marginBottom:20 , width:'60%'}}>
+            <TouchableOpacity style={{backgroundColor:'#ECE9EC',padding:5,borderRadius:20}}>
+            <Image source={require('../Assets/Googlelogo.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={{backgroundColor:'#ECE9EC',padding:5,borderRadius:20}}>
+            <Image source={require('../Assets/Facbook.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={{backgroundColor:'#ECE9EC',padding:5,borderRadius:20}}>
+            <Image source={require('../Assets/appleLogo.png')}/>
+            </TouchableOpacity>
+
+          </View>
             <TouchableOpacity
               style={{
                 //marginHorizontal: 5,
-                backgroundColor: '#000',
+                backgroundColor: Theme.txt,
                 borderRadius: 20,
               }}>
               <Text
                 style={{
                   alignSelf: 'center',
                   paddingVertical: 18,
-                  color: '#fff',
+                  color: Theme.bg,
                   fontSize: 18,
                 }}>
                 Next
@@ -80,7 +120,6 @@ import {
   
   const styles = StyleSheet.create({
     TopHeading:{
-        color:'#000',
         alignSelf:"center",
         fontWeight:"bold",
         fontSize:35,

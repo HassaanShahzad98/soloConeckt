@@ -30,7 +30,7 @@ const RewardsScreen = () => {
           paddingHorizontal: 10,
           paddingVertical: 20,
           borderBottomWidth: 1,
-          borderBottomColor: 'rgba(0,0,0,0.25)',
+          borderBottomColor: Theme.themeName==='Light'?'rgba(0,0,0,0.25)': 'rgba(240,240,240,0.25)',
         }}>
         <AntDesign name="arrowleft" size={25} color="#000" />
         <Text
@@ -112,7 +112,7 @@ const RewardsScreen = () => {
           borderBottomWidth: 1,
           borderColor: Theme.txt,
         }}>
-        <Image source={require('../../Assets/chart2.png')} />
+        <Image source={Theme.themeName==='Light'?require('../../Assets/chart.png'):require('../../Assets/chartDark.png')} />
       </View>
       <View
         style={{flexDirection: 'row', width: '100%',justifyContent:'space-evenly',marginTop:20}}>
@@ -126,8 +126,8 @@ const RewardsScreen = () => {
             }
           }
           source={require('../../Assets/lightGradient.png')}>
-              <Text style={{color: Theme.txt , fontSize: 14 , fontWeight:'500'}}>$123545</Text>
-              <Text style={{color: Theme.txt , fontSize: 14}}>Total Referrals</Text>
+              <Text style={{color: '#000' , fontSize: 14 , fontWeight:'500'}}>$123545</Text>
+              <Text style={{color: '#000' , fontSize: 14}}>Total Referrals</Text>
           </ImageBackground>
           <ImageBackground
           style={
@@ -139,8 +139,8 @@ const RewardsScreen = () => {
             }
           }
           source={require('../../Assets/darkGradient.png')}>
-              <Text style={{color: Theme.bg , fontSize: 14 , fontWeight:'500'}}>$123545</Text>
-              <Text style={{color: Theme.bg , fontSize: 14}}>Paid Referrals</Text>
+              <Text style={{color: '#fff' , fontSize: 14 , fontWeight:'500'}}>$123545</Text>
+              <Text style={{color: '#fff' , fontSize: 14}}>Paid Referrals</Text>
           </ImageBackground>
       </View>
     </SafeAreaView>

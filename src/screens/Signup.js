@@ -7,16 +7,18 @@ import {
   StyleSheet,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import React from 'react';
+import React, {useContext} from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { ContextStore } from '../ContextApi/ContextProvider';
 
 const Signup = ({navigation}) => {
+  let {Theme} = useContext(ContextStore);
   return (
     <SafeAreaView
       style={{
         flex: 1,
         paddingHorizontal: 20,
-        backgroundColor:'#fafafa'
+        backgroundColor:Theme.bg
       }}>
       <View
         style={{flex: 1, justifyContent: 'space-between', marginVertical: 10}}>
@@ -28,18 +30,18 @@ const Signup = ({navigation}) => {
               alignSelf: 'center',
               marginTop: 20,
             }}
-            source={require('../Assets/Logo1.png')}
+            source={Theme.themeName==='Light'?require('../Assets/Logo1.png') : require('../Assets/Logo1Gold.png')}
           />
           <Text
             style={{
-              color: '#000',
+              color: Theme.txt,
               alignSelf: 'center',
               fontWeight: 'bold',
               fontSize: 20,
             }}>
             Create an Account
           </Text>
-          <Text style={{color: '#000', alignSelf: 'center'}}>
+          <Text style={{color: Theme.txt, alignSelf: 'center'}}>
             Sign up now to start with an account
           </Text>
         </View>
@@ -61,7 +63,7 @@ const Signup = ({navigation}) => {
             <TextInput
               onFocus={() => console.log('focus received')}
               onBlur={() => console.log('focus lost')}
-              style={styles.nonFocusedInput}
+              style={Theme.themeName==='Light'?styles.nonFocusedInput:styles.nonFocusedInputDark}
             />
           </View>
           <View>
@@ -71,7 +73,7 @@ const Signup = ({navigation}) => {
             <TextInput
               onFocus={() => console.log('focus received')}
               onBlur={() => console.log('focus lost')}
-              style={styles.nonFocusedInput}
+              style={Theme.themeName==='Light'?styles.nonFocusedInput:styles.nonFocusedInputDark}
             />
           </View>
           <View>
@@ -81,7 +83,7 @@ const Signup = ({navigation}) => {
             <TextInput
               onFocus={() => console.log('focus received')}
               onBlur={() => console.log('focus lost')}
-              style={styles.nonFocusedInput}
+              style={Theme.themeName==='Light'?styles.nonFocusedInput:styles.nonFocusedInputDark}
             />
           </View>
         </View>
@@ -96,7 +98,7 @@ const Signup = ({navigation}) => {
             disabled={false}
             onAnimationType={'bounce'}
           />
-          <Text style={{color: '#000'}}>
+          <Text style={{color: Theme.txt}}>
             I have read and agreed to terms and conditions
           </Text>
         </View>
@@ -129,6 +131,15 @@ const styles = StyleSheet.create({
     padding: 10,
     borderColor: '#fafafa',
     borderBottomColor: '#rgba(0,0,0,0.2)',
+    borderRadius: 10,
+  },
+  nonFocusedInputDark: {
+    height: 40,
+    marginVertical: 12,
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '#0e0e0e',
+    borderBottomColor: '#rgba(240,240,240,0.2)',
     borderRadius: 10,
   },
   focusedInput: {

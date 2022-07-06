@@ -75,16 +75,16 @@ const ArtGallaryScreen = () => {
           paddingHorizontal: 10,
           paddingVertical: 20,
           borderBottomWidth: 1,
-          borderBottomColor: 'rgba(0,0,0,0.25)',
+          borderBottomColor: Theme.themeName==='Light'?'rgba(0,0,0,0.25)': 'rgba(240,240,240,0.25)',
         }}>
-        <AntDesign name="arrowleft" size={25} color="#000" />
+        <AntDesign name="arrowleft" size={25} color={Theme.txt} />
         <Text
           style={{
             color: Theme.txt,
             fontSize: 20,
             fontWeight: '500',
           }}>
-          Solo Conneckt
+          SOLO CONNECKT
         </Text>
         <Text></Text>
       </View>
